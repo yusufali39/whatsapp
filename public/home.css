@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 30em;
+    height: 68vh;
+    background-color: black;
+    display: flex;
+    margin: 60px auto;
+    border-radius: 0.4em;
+}
+
+  button {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #25D366;
+    padding: 5px;
+    position: relative;
+    width: 12em;
+    height: 12em;
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+  }
+  
+  button p {
+    position: absolute;
+    top: 5em;
+    left: 4em;
+    margin: 0 auto;
+    padding: 0;
+    transition: .5s;
+    color: #25D366;
+  }
+  
+  button svg {
+    position: absolute;
+    top: 5em;
+    right: 5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1em;
+    fill: #fff
+  }
+  
+  button:hover p {
+    display: none;
+  }
+  
+  button:hover svg {
+    opacity: 1;
+  }
+  
+  button:hover {
+    background-color: #25D366;
+  }
+  

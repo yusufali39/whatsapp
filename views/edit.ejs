@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit your chat</title>
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #8694A0;
+      }
+      .card {
+        margin-top: 20px;
+      }
+      .text-box {
+        height: fit-content;
+        background-color: transparent;
+      }
+
+      .text-box .box-container {
+        background-color: #202c33;
+        border-radius: 0px;
+        padding: 8px;
+      }
+
+      .text-box textarea {
+        color: #fff;
+        background-color: #0b141a;
+        width: 97%;
+        height: 40px;
+        resize: none;
+        border: 0;
+        border-radius: 6px;
+        padding-top: 5px;
+        padding-left: 10px;
+        font-size: 13px;
+        outline: none;
+        caret-color: #0a84ff;
+      }
+
+      .text-box .formatting {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto 1fr;
+      }
+      .text-box .formatting button {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 0;
+        outline: none;
+      }
+
+      .text-box .formatting button:hover {
+        background-color: #f1f1f1;
+      }
+
+      .text-box .formatting .send {
+        width: 100px;
+        height: 30px;
+        background-color: #0a84ff;
+        margin: 0 0 0 auto;
+      }
+
+      .text-box .formatting .send:hover {
+        background-color: #026eda;
+      }
+    </style>
+    <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+      <div class="card">
+        <p>Edit your chat</p>
+        <p>From <b><%= chat.from %></b> to <b><%= chat.to %></b></p>
+        <div class="text-box">
+          <div class="box-container">
+            <textarea placeholder="Reply" name="msg" id="textInput"><%= chat.msg %></textarea>
+            <div>
+              <div class="formatting">
+                <button type="submit" class="send" title="Send">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
